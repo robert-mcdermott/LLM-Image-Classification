@@ -1,0 +1,5 @@
+NAME                            ID              SIZE    MODIFIED
+animal-classifier:latest        e4129013b6fe    4.5 GB  22 hours ago
+chess-classifier:latest         8e97673f07bd    4.5 GB  About a minute ago
+llava:latest                    cd3274b81a85    4.5 GB  22 hours ago
+mnist-classifier:latest         67f6cd5c8049    4.5 GB  22 hours ago
