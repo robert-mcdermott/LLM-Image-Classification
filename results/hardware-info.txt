@@ -1,0 +1,51 @@
+R      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+16770 rmcdermo  20   0 23.291g 8.093g 5.288g S  1397  1.1 207:14.03 ollama
+
+
+processor       : 1
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 85
+model name      : Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz
+stepping        : 7
+microcode       : 0x5003303
+cpu MHz         : 3668.927
+cache size      : 25344 KB
+physical id     : 0
+siblings        : 18
+core id         : 1
+cpu cores       : 18
+apicid          : 2
+initial apicid  : 2
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 22
+wp              : yes
+
+
+Tue Jan 16 14:55:23 2024:
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.104.05             Driver Version: 535.104.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce RTX 2080 Ti     Off | 00000000:3B:00.0 Off |                  N/A |
+| 25%   42C    P2              85W / 250W |   5817MiB / 11264MiB |     58%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A     16770      C   ollama                                     5812MiB |
++---------------------------------------------------------------------------------------+
+
+
+[rmcdermo@gizmok155 image-class-llm]$ free
+              total        used        free      shared  buff/cache   available
+Mem:      791242360   228126644   548090320     1224392    15025396   557137376
+Swap:     117187496       58888   117128608
