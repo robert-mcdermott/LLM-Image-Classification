@@ -32,7 +32,7 @@ def image_to_base64(image_path):
 
 def classify(image_path, base64_image, prompt):
     payload = {
-        "model": "mnist-number-classifier",
+        "model": "mnist-classifier",
         "prompt": prompt,
         "images": [base64_image]
     }
