@@ -106,23 +106,23 @@ Confusion Matrix:
 ![chess-confusion-matrix.png](results/chess-confusion-matrix.png)
 
 Precision and Recall:
+| Chess Piece | Precision | Recall   | F1-score |
+|-------------|-----------|----------|----------|
+| Bishop      | 0.294118  | 0.070423 | 0.113636 |
+| King        | 0.149533  | 0.533333 | 0.233577 |
+| Knight      | 0.294118  | 0.053763 | 0.090909 |
+| Pawn        | 0.207692  | 0.310345 | 0.248848 |
+| Queen       | 0.092593  | 0.074627 | 0.082645 |
+| Rook        | 0.090909  | 0.034483 | 0.050000 |
 
-
-Accuracy:
-
-chess piece    precision    recall  f1-score
- bishop        0.294118  0.070423  0.113636 
- king          0.149533  0.533333  0.233577
- knight        0.294118  0.053763  0.090909 
- pawn          0.207692  0.310345  0.248848 
- queen         0.092593  0.074627  0.082645
- rook          0.090909  0.034483  0.050000
                
-               
-               precision recall    f1-score
-accuracy       0.165591  0.165591  0.165591
-macro avg      0.188160  0.179496  0.136602
-weighted avg   0.192235  0.165591  0.133493
+Accuracy:               
+| Metric       | Precision | Recall   | F1-score |
+|--------------|-----------|----------|----------|
+| Accuracy     | 0.165591  | 0.165591 | 0.165591 |
+| Macro Avg    | 0.188160  | 0.179496 | 0.136602 |
+| Weighted Avg | 0.192235  | 0.165591 | 0.133493 |
+
 
 
 ## Conclusion  
