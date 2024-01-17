@@ -124,6 +124,7 @@ Accuracy:
 | Weighted Avg | 0.192235  | 0.165591 | 0.133493 |
 
 
+![does-llava-know-chess.png](image_data/does-llava-know-chess.png)
 
 ## Conclusion  
 
