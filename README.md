@@ -10,7 +10,7 @@ This short weekend project was an attempt explore this possibly, learn something
 
 OpenAI's Multimodal "GPT-4 Vision" is state of the art and I've been very impressed with it's ability to understand images, and even detect humor and satire (memes, etc.). But lately I've been more interested in the open-source LLMs as I like not having to worry about API keys getting stolen, pathological bugs running up my charges, or worrying about private/sensitive data leaking online.
 
-I'm going to use a 7B parameter quantized version of LLaVA (Large Language and Vision Assistant) for this project. Here are some links to the project, the papers and model:
+I'm going to use a 7B parameter quantized version of LLaVA (Large Language and Vision Assistant) for this project. Here are some links to the LLaVA project, papers and model:
 
 LLaVA Project:
 - https://llava-vl.github.io/
