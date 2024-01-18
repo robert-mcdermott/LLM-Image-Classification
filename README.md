@@ -12,14 +12,14 @@ OpenAI's Multimodal "GPT-4 Vision" is state of the art and I've been very impres
 
 I'm going to use a 7B parameter quantized version of LLaVA (Large Language and Vision Assistant) for this project. Here are some links to the LLaVA project, papers and model:
 
-LLaVA Project:
+**LLaVA Project**:
 - https://llava-vl.github.io/
 
-LLaVA Papers:
+**LLaVA Papers**:
 - https://arxiv.org/pdf/2304.08485.pdf
 - https://arxiv.org/pdf/2310.03744.pdf
 
-LLaVA Quantized Model:
+**LLaVA Quantized Model**:
 - https://huggingface.co/liuhaotian/llava-v1.5-7b
 
 As an example of what LLaVA is capable of, here is example of asking for a detailed description of an image:
@@ -29,16 +29,16 @@ As an example of what LLaVA is capable of, here is example of asking for a detai
 ## MNIST Handwritten Digit Classification
 ![mnist-digits](image_data/mnist-digits.png)
 
-The [MNIST database](https://en.wikipedia.org/wiki/MNIST_database) is a large collection of handwritten digits that's commonly used in machine learning image processing tasks. For this test, I used 50 images of each digit (500 total) from the [MNIST as .jpg](https://www.kaggle.com/datasets/scolianni/mnistasjpg) dataset. I created a [mnist-classifer-model](modelfiles/mnist-number-classifier.Modelfile) for this test.
+The [MNIST database](https://en.wikipedia.org/wiki/MNIST_database) is a large collection of handwritten digits that's commonly used in machine learning image processing tasks. For this test, I used 50 images of each digit (500 total) from the [MNIST as .jpg](https://www.kaggle.com/datasets/scolianni/mnistasjpg) dataset. I created the [mnist-classifer-model](modelfiles/mnist-number-classifier.Modelfile) definition for this test.
 
 ### Results
 
 There results weren't as good as I expected, with only a 79.2% accuracy score. It had trouble with "0", "1", and "2", often confusing them for "3". Strange. A traditional machine learning approach should exceed 98%. 
 
-Confusion Matrix:
+***Confusion Matrix***:
 ![mnist-confusion-matrix.png](results/mnist-confusion-matrix.png)
 
-Precision and Recall:
+***Precision and Recall***:
 | Digit | Precision | Recall | F1-score |
 |-------|-----------|--------|----------|
 | 0     | 0.769231  | 0.600  | 0.674157 |
@@ -52,7 +52,7 @@ Precision and Recall:
 | 8     | 0.921053  | 0.700  | 0.795455 |
 | 9     | 1.000000  | 0.680  | 0.809524 |
 
-Accuracy:
+***Accuracy***:
 | Metric       | Precision | Recall | F1-score |
 |--------------|-----------|--------|----------|
 | Accuracy     | 0.792000  | 0.792  | 0.792000 |
@@ -64,15 +64,15 @@ Accuracy:
 ## Animal Classification
 ![animals.jpg](image_data/animals.png)
 
-Next up is animal classification. I used the [Animals-10](https://www.kaggle.com/datasets/alessiocorrado99/animals10) dataset for this and created the [animal-classifier](modelfiles/animal-classifier.Modelfile) model.
+Next up is animal classification. I used the [Animals-10](https://www.kaggle.com/datasets/alessiocorrado99/animals10) dataset for this and created the [animal-classifier](modelfiles/animal-classifier.Modelfile) model definition.
 
 ### Results
 The results for this were also interesting. While it did well for some animal catagories, it clearly had never seen a squirrel before as it classified most squirrels as cats. It also had difficultly distinguishing cows and spiders from cats. It looks like whenever it was unsure about these problem catagories, it just guessed "cat". It had perfect scores on both precision and recall for butterflies, elephants, and horses. It has an average accuracy of 77.4%
 
-Confusion Matrix:
+***Confusion Matrix***:
 ![animals-confusion-matrix.png](results/animals-confusion-matrix.png)
 
-Precision and Recall:
+***Precision and Recall***:
 | Animal   | Precision | Recall | F1-score |
 |----------|-----------|--------|----------|
 | Butterfly| 1.000000  | 1.000  | 1.000000 |
@@ -86,7 +86,7 @@ Precision and Recall:
 | Spider   | 1.000000  | 0.440  | 0.611111 |
 | Squirrel | 1.000000  | 0.120  | 0.214286 |
 
-Accuracy:
+***Accuracy***:
 | Metric       | Precision | Recall | F1-score |
 |--------------|-----------|--------|----------|
 | Accuracy     | 0.774000  | 0.774  | 0.774000 |
@@ -98,19 +98,19 @@ Accuracy:
 ## Chess Piece Classification
 ![chess-pieces.jpg](image_data/chess-pieces.png)
 
-The last classification I tried was chess pieces. I used the [chessman-image-dataset](https://www.kaggle.com/datasets/niteshfre/chessman-image-dataset) and created the [chess-classifier](modelfiles/chess-classifier.Modelfile)
+The last classification I tried was chess pieces. I used the [chessman-image-dataset](https://www.kaggle.com/datasets/niteshfre/chessman-image-dataset) and created the [chess-classifier](modelfiles/chess-classifier.Modelfile) model definition.
 
 ### Results
 
 LLaVA did terrible at identifying chess pieces by their type. It thought (guessed?) that 70% of the chess pieces shown were "king" and the majority of the guesses were "pawn". It can correctly identify that it's a chess piece it's being shown, but it has no idea what specific chess piece it is.
 
-It knows it's a chess piece it's being shown, but clearly can't identify the specific piece:
+Does it even know what a chess piece is? Yes, it knows it's a chess piece it's being shown, but clearly can't identify the specific piece:
 ![does-llava-know-chess.png](image_data/does-llava-know-chess.png)
 
-Confusion Matrix:
+***Confusion Matrix***:
 ![chess-confusion-matrix.png](results/chess-confusion-matrix.png)
 
-Precision and Recall:
+***Precision and Recall***:
 | Chess Piece | Precision | Recall   | F1-score |
 |-------------|-----------|----------|----------|
 | Bishop      | 0.294118  | 0.070423 | 0.113636 |
@@ -120,7 +120,7 @@ Precision and Recall:
 | Queen       | 0.092593  | 0.074627 | 0.082645 |
 | Rook        | 0.090909  | 0.034483 | 0.050000 |
 
-Accuracy:               
+***Accuracy***:               
 | Metric       | Precision | Recall   | F1-score |
 |--------------|-----------|----------|----------|
 | Accuracy     | 0.165591  | 0.165591 | 0.165591 |
