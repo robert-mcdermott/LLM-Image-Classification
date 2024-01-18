@@ -102,6 +102,11 @@ The last classification I tried was chess pieces. I used the [chessman-image-dat
 
 ### Results
 
+LLaVA did terrible at identifying chess pieces by their type. It thought (guessed?) that 70% of the chess pieces shown were "king" and the majority of the guesses were "pawn". It can correctly identify that it's a chess piece it's being shown, but it has no idea what specific chess piece it is.
+
+It knows it's a chess piece it's being shown, but clearly can't identify the specific piece:
+![does-llava-know-chess.png](image_data/does-llava-know-chess.png)
+
 Confusion Matrix:
 ![chess-confusion-matrix.png](results/chess-confusion-matrix.png)
 
@@ -115,16 +120,12 @@ Precision and Recall:
 | Queen       | 0.092593  | 0.074627 | 0.082645 |
 | Rook        | 0.090909  | 0.034483 | 0.050000 |
 
-               
 Accuracy:               
 | Metric       | Precision | Recall   | F1-score |
 |--------------|-----------|----------|----------|
 | Accuracy     | 0.165591  | 0.165591 | 0.165591 |
 | Macro Avg    | 0.188160  | 0.179496 | 0.136602 |
 | Weighted Avg | 0.192235  | 0.165591 | 0.133493 |
-
-
-![does-llava-know-chess.png](image_data/does-llava-know-chess.png)
 
 ## Conclusion  
 
