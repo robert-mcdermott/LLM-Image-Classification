@@ -1,10 +1,10 @@
 # Exploring Image Classification with Multimodal LLMs
 
-Multimodal Large Language Models (LLMs) models bring computer vision to LLMs so they can both "see" images and have the language to describe the contents of the images.
+Multimodal Large Language Models (LLMs) bring computer vision to LLMs so they can both "see" images and have the language to describe the contents of the images.
 
-Given that LLMs are adept at handling a variety of general-purpose NLP tasks like sentiment analysis, named entity recognition, and text classification, it's interesting to consider whether these vision-enabled LLMs could supplant traditional image classification methods.
+Given that LLMs are adept at handling a variety of general-purpose NLP tasks like sentiment analysis, named entity recognition, and text classification, it's interesting to consider whether these vision-enabled LLMs could supplant traditional image classification methods in a general purpose way.
 
-The key advantage of multimodal LLMs lies in their ability to contextualize images with corresponding natural language descriptions and transfer learning. This approach is more advanced than traditional image classification methods, which primarily rely on analyzing visual features. Furthermore, the inherent capability of these models for zero-shot learning allows them to potentially categorize images into previously unseen classes, based on their understanding the image context. This stands in contrast to conventional models, which necessitate specific training data for each category they are expected to identify.
+The key advantage of multimodal LLMs lies in their ability to contextualize images with corresponding natural language descriptions and the use of transfer learning. This approach is more advanced than traditional image classification methods, which primarily rely on analyzing visual features. Furthermore, the inherent capability of these models for zero-shot learning allows them to potentially categorize images into previously unseen classes, based on their understanding the image context. This stands in contrast to conventional models, which necessitate specific training data for each category they are expected to identify.
 
 This weekend project was an exploration into this possibility, with the dual objectives of learning and of course having fun. This repository includes all of the data, code and model definition files used for this project.
 
