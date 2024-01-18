@@ -1,10 +1,13 @@
-# LLMs for Image Classification
+# Exploring Image Classification with Multimodal LLMs
 
-Multimodal models bring computer vision to LLMs so they can both "see" images and have the language to describe the contents of the images. Since LLMs can perform general purpose NLP tasks such as sentiment analysis, named entity recognition, and other text classification tasks, I wondered if vision enabled LLMs could also could replace traditional image classification methods.
+Multimodal Large Language Models (LLMs) models bring computer vision to LLMs so they can both "see" images and have the language to describe the contents of the images.
 
-Multimodal LLMs can understand the context of an image in relation to natural language descriptions. This is more advanced than traditional methods that classify images based solely on visual features. Combined with their ability to perform zero-shot learning they can potentially classify images into categories they have never seen during training, as long as they understand the category's description. Traditional models require training data for each specific category they need to recognize.
+Given that LLMs are adept at handling a variety of general-purpose NLP tasks like sentiment analysis, named entity recognition, and text classification, it's interesting to consider whether these vision-enabled LLMs could supplant traditional image classification methods.
 
-This short weekend project was an attempt explore this possibly, learn something, and of course have some fun. All of the data, code and model definition files used are contained in this repository.
+The key advantage of multimodal LLMs lies in their ability to contextualize images with corresponding natural language descriptions and transfer learning. This approach is more advanced than traditional image classification methods, which primarily rely on analyzing visual features. Furthermore, the inherent capability of these models for zero-shot learning allows them to potentially categorize images into previously unseen classes, based on their understanding the image context. This stands in contrast to conventional models, which necessitate specific training data for each category they are expected to identify.
+
+This weekend project was an exploration into this possibility, with the dual objectives of learning and of course having fun. This repository includes all of the data, code and model definition files used for this project.
+
 
 ## LLaVA Multimodal Model
 
@@ -93,8 +96,6 @@ The results for this were also interesting. While it did well for some animal ca
 | Macro Avg    | 0.930675  | 0.774  | 0.775512 |
 | Weighted Avg | 0.930675  | 0.774  | 0.775512 |
 
-
-
 ## Chess Piece Classification
 ![chess-pieces.jpg](image_data/chess-pieces.png)
 
@@ -102,9 +103,10 @@ The last classification I tried was chess pieces. I used the [chessman-image-dat
 
 ### Results
 
-LLaVA did terrible at identifying chess pieces by their type. It thought (guessed?) that 70% of the chess pieces shown were "king" and the majority of the guesses were "pawn". It can correctly identify that it's a chess piece it's being shown, but it has no idea what specific chess piece it is.
+LLaVA did terrible at identifying chess pieces by their type. It thought (guessed?) that 70% of the chess pieces shown were kings and the majority of remaining were pawns. It would have performed better if simply was simply random selection. 
 
-Does it even know what a chess piece is? Yes, it knows it's a chess piece it's being shown, but clearly can't identify the specific piece:
+Does LLaVA even know what a chess piece is? Yes, it knows it's a chess piece it's being shown, but it clearly can't identify the specific piece (with default system message):
+
 ![does-llava-know-chess.png](image_data/does-llava-know-chess.png)
 
 ***Confusion Matrix***:
@@ -129,3 +131,6 @@ Does it even know what a chess piece is? Yes, it knows it's a chess piece it's b
 
 ## Conclusion  
 
+While this project shows that the vanilla LLaVA model does have some functional image classification abilities for some types of objects (it's a flawless butterfly, elephant, and horse detector). It's not good enough to use as a general purpose image classifier, and can't classify things it's never been trained on (Chess pieces). That said, it would be a very good base to perform fine tunes on specific classes of images that you need it to classify with high precision. In the future, I may attempt to fine tune this model for chess piece identification and document that process and the results.
+
+***Note:*** After thinking about unexpected results with favoring the number "3" in the MNIST test, and "cat" in the animal test, I think I may have found the problem that would explain this and invalidate the results. In the [system prompt for the MNIST model](modelfiles/mnist-number-classifier.Modelfile), I provided an example: *...For example if you identify a 3, respond only with "3"*, and with the [system prompt for the animal model](modelfiles/animal-classifier.Modelfile), I provided an example: *...For example if you identify a cat in the image, respond only with "cat"*.  My assumption is that this was no coincidence and the examples made it more likely to classify "3" (but why only 0, 1, and 2?) and "cat" (but why just squirrels, spiders, cows and dogs?).  I'll have to modify the system messages and try again to confirm this suspicion. 
