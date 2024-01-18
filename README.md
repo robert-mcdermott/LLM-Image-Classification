@@ -29,6 +29,8 @@ As an example of what LLaVA is capable of, here is example of asking for a detai
 
 ![example-image-description](image_data/example_image_description.png)
 
+That description pretty much nails it.
+
 ## MNIST Handwritten Digit Classification
 ![mnist-digits](image_data/mnist-digits.png)
 
